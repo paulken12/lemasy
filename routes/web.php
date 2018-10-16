@@ -14,3 +14,16 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+Route::get('/trainings', 'TrainingController@index')->name('trainings');
+
+Route::get('/create/trainings', 'TrainingController@create')->name('create.training');
+
+Route::post('/trainings', 'TrainingController@store')->name('store.training');
+
+Route::get('/users', 'UserController@index')->name('users');
